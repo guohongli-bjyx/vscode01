@@ -9,4 +9,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 修复bug
-abcdefg
+abc
