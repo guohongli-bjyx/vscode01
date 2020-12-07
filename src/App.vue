@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>购物车事例</h1>
+    <p>账号:{{email}}</p>
+    <hr>
+    <h2>产品</h2>
+    <ProductList/>
+    <hr>
+    <h2>清单</h2>
+    <ShoppingCart/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import{mapState} from 'vuex'
+import ProductList from './components/ProductList.vue'
+import ShoppingCart from './components/ShoppingCart.vue'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  computed:{
+    ...mapState({
+      email:state=>state.email
+    })
+  },                                     // 看看老师这里是怎么写的
+  components:{
+      ProductList,
+      ShoppingCart
   }
 }
 </script>
